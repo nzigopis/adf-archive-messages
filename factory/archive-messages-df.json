@@ -1,0 +1,9 @@
+{
+	"name": "archive-messages-df",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6b80709e-ee6c-482d-92b8-f49f6062d835",
+		"tenantId": "07b51f22-9b60-4bef-a5d6-671d2b4ff8fc"
+	}
+}
