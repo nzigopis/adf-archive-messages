@@ -29,18 +29,118 @@
 						}
 					},
 					"sink": {
-						"type": "JsonSink",
+						"type": "ParquetSink",
 						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings",
+							"type": "AzureBlobFSWriteSettings",
 							"copyBehavior": "MergeFiles"
 						},
 						"formatSettings": {
-							"type": "JsonWriteSettings",
-							"filePattern": "arrayOfObjects"
+							"type": "ParquetWriteSettings"
 						}
 					},
 					"enableStaging": false,
-					"dataIntegrationUnits": 2
+					"dataIntegrationUnits": 2,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['MessageType']"
+								},
+								"sink": {
+									"name": "MessageType"
+								}
+							},
+							{
+								"source": {
+									"path": "$['SendTime']"
+								},
+								"sink": {
+									"name": "SendTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Version']"
+								},
+								"sink": {
+									"name": "Version"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Payload']['propertyName']"
+								},
+								"sink": {
+									"name": "propertyName"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Payload']['propertyType']"
+								},
+								"sink": {
+									"name": "propertyType"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Payload']['propertyValue']"
+								},
+								"sink": {
+									"name": "propertyValue"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Payload']['dateTime']"
+								},
+								"sink": {
+									"name": "dateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Payload']['PropertyName']"
+								},
+								"sink": {
+									"name": "PropertyName"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Payload']['PropertyType']"
+								},
+								"sink": {
+									"name": "PropertyType"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Payload']['PropertyValue']"
+								},
+								"sink": {
+									"name": "PropertyValue"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Payload']['Datetime']"
+								},
+								"sink": {
+									"name": "Datetime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['InstrumentId']"
+								},
+								"sink": {
+									"name": "InstrumentId"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
@@ -50,7 +150,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Json1",
+						"referenceName": "Parquet1",
 						"type": "DatasetReference"
 					}
 				]
