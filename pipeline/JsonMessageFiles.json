@@ -48,7 +48,8 @@
 									"path": "$['MessageType']"
 								},
 								"sink": {
-									"name": "MessageType"
+									"name": "MessageType",
+									"type": "String"
 								}
 							},
 							{
@@ -56,7 +57,8 @@
 									"path": "$['SendTime']"
 								},
 								"sink": {
-									"name": "SendTime"
+									"name": "SendTime",
+									"type": "DateTimeOffset"
 								}
 							},
 							{
@@ -64,7 +66,8 @@
 									"path": "$['Version']"
 								},
 								"sink": {
-									"name": "Version"
+									"name": "Version",
+									"type": "String"
 								}
 							},
 							{
@@ -72,7 +75,8 @@
 									"path": "$['Payload']['propertyName']"
 								},
 								"sink": {
-									"name": "propertyName"
+									"name": "propertyName",
+									"type": "String"
 								}
 							},
 							{
@@ -80,7 +84,8 @@
 									"path": "$['Payload']['propertyType']"
 								},
 								"sink": {
-									"name": "propertyType"
+									"name": "propertyType",
+									"type": "String"
 								}
 							},
 							{
@@ -88,7 +93,8 @@
 									"path": "$['Payload']['propertyValue']"
 								},
 								"sink": {
-									"name": "propertyValue"
+									"name": "propertyValue",
+									"type": "String"
 								}
 							},
 							{
@@ -96,39 +102,8 @@
 									"path": "$['Payload']['dateTime']"
 								},
 								"sink": {
-									"name": "dateTime"
-								}
-							},
-							{
-								"source": {
-									"path": "$['Payload']['PropertyName']"
-								},
-								"sink": {
-									"name": "PropertyName"
-								}
-							},
-							{
-								"source": {
-									"path": "$['Payload']['PropertyType']"
-								},
-								"sink": {
-									"name": "PropertyType"
-								}
-							},
-							{
-								"source": {
-									"path": "$['Payload']['PropertyValue']"
-								},
-								"sink": {
-									"name": "PropertyValue"
-								}
-							},
-							{
-								"source": {
-									"path": "$['Payload']['Datetime']"
-								},
-								"sink": {
-									"name": "Datetime"
+									"name": "dateTime",
+									"type": "DateTimeOffset"
 								}
 							},
 							{
@@ -136,7 +111,8 @@
 									"path": "$['InstrumentId']"
 								},
 								"sink": {
-									"name": "InstrumentId"
+									"name": "InstrumentId",
+									"type": "String"
 								}
 							}
 						]
